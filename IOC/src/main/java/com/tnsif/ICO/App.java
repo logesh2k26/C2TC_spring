@@ -1,6 +1,7 @@
 package com.tnsif.ICO;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 class App {
@@ -8,7 +9,7 @@ class App {
     	
     	ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
     	System.out.println("loaded");
-    	Mobile mobile = context.getBean("mobile", Mobile.class);
+    	Mobile mobile = ((AbstractApplicationContext) context).getBean("mobile", Mobile.class);
     	mobile.call();
     	mobile.data();
     }

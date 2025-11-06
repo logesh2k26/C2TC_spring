@@ -1,5 +1,7 @@
 package com.tnsif.springAnnotations.application;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Book {
 	@Value("110")
 	private int bookId;
